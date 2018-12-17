@@ -1,5 +1,3 @@
-package mainPackage;
-
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
@@ -9,7 +7,6 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JComponent;
 
 // Note that the JComponent is set up to listen for mouse clicks
@@ -19,6 +16,8 @@ import javax.swing.JComponent;
 
 
 public class Display extends JComponent implements MouseListener, MouseMotionListener {
+
+	private static final long serialVersionUID = 1L;
 	public static final int ROWS = 80;
 	public static final int COLS = 100;
 	public static Cell[][] cell = new Cell[ROWS][COLS];
@@ -42,6 +41,7 @@ public class Display extends JComponent implements MouseListener, MouseMotionLis
 	private boolean paintloop = false;
 	private static boolean canWrap = true;
 	private static int timeBetweenReplots = 700; // change to your liking
+	private static int generationNumber = 0;
 
 	public Display(int width, int height) {
 		DISPLAY_WIDTH = width;
@@ -215,8 +215,9 @@ public class Display extends JComponent implements MouseListener, MouseMotionLis
 		togglePaintLoop();
 		repaint();
 		togglePaintLoop();
+		generationNumber++;
+		Main.setFrameTitle("Nguyen_Zajac: Conway's Game of Life. Generation: " + generationNumber);
 	}
-
 
 	public void mouseClicked(MouseEvent arg0) {
 		int clickX = arg0.getX();
@@ -269,6 +270,9 @@ public class Display extends JComponent implements MouseListener, MouseMotionLis
 	
 
 	private class StartButton extends JButton implements ActionListener {
+
+		private static final long serialVersionUID = 1L;
+
 		StartButton() {
 			super("Start");
 			addActionListener(this);
@@ -286,6 +290,9 @@ public class Display extends JComponent implements MouseListener, MouseMotionLis
 		}
 	}
 	private class ToggleWrap extends JButton implements ActionListener {
+		
+		private static final long serialVersionUID = 1L;
+
 		ToggleWrap() {
 			super("Wrap");
 			addActionListener(this);
@@ -302,6 +309,9 @@ public class Display extends JComponent implements MouseListener, MouseMotionLis
 		}
 	}
 	private class ClearButton extends JButton implements ActionListener {
+
+		private static final long serialVersionUID = 1L;
+
 		ClearButton() {
 			super("Clear");
 			addActionListener(this);
@@ -313,6 +323,9 @@ public class Display extends JComponent implements MouseListener, MouseMotionLis
 	}
 	
 	private class StepButton extends JButton implements ActionListener {
+
+		private static final long serialVersionUID = 1L;
+
 		StepButton() {
 			super("Step");
 			addActionListener(this);
@@ -324,6 +337,9 @@ public class Display extends JComponent implements MouseListener, MouseMotionLis
 	}
 	
 	private class QuitButton extends JButton implements ActionListener {
+
+		private static final long serialVersionUID = 1L;
+
 		QuitButton() {
 			super("Quit");
 			addActionListener(this);
@@ -336,6 +352,9 @@ public class Display extends JComponent implements MouseListener, MouseMotionLis
 	}
 	
 	private class SpeedButton extends JButton implements ActionListener {
+
+		private static final long serialVersionUID = 1L;
+
 		SpeedButton() {
 			super("Slow");
 			addActionListener(this);
@@ -357,7 +376,11 @@ public class Display extends JComponent implements MouseListener, MouseMotionLis
 		}
 	}
 	
+	
 	private class GGGButton extends JButton implements ActionListener {
+
+		private static final long serialVersionUID = 1L;
+
 		GGGButton() {
 			super("Spawn GGG");
 			addActionListener(this);
@@ -411,6 +434,9 @@ public class Display extends JComponent implements MouseListener, MouseMotionLis
 	}
 	
 	private class YmButton extends JButton implements ActionListener {
+
+		private static final long serialVersionUID = 1L;
+
 		YmButton() {
 			super("Ym");
 			addActionListener(this);

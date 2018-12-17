@@ -1,13 +1,9 @@
-package mainPackage;
-
 import javax.swing.JFrame;
 
-
-
 public class Main {
-
-
-
+	
+	private static JFrame f;
+	
 	public static void main(String[] args) {
 
 		// Bring up a JFrame with squares to represent the cells
@@ -16,7 +12,7 @@ public class Main {
 		
 		final int DISPLAY_HEIGHT = 700;
 
-		JFrame f = new JFrame();
+		f = new JFrame();
 
 		f.setSize(DISPLAY_WIDTH, DISPLAY_HEIGHT);
 
@@ -34,7 +30,10 @@ public class Main {
 
 		f.setVisible(true);
 
-
+	}
+	
+	public static void setFrameTitle(String str) {
+		f.setTitle(str);
 	}
 
 }

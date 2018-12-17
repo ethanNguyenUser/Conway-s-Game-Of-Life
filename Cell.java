@@ -1,5 +1,3 @@
-package mainPackage;
-
 import java.awt.Color;
 
 import java.awt.Graphics;
@@ -241,13 +239,9 @@ public class Cell {
 
 		int xleft = x_offset + 1 + (myX * (width + 1));
 
-		int xright = x_offset + width + (myX * (width + 1));
-
 		int ytop = y_offset + 1 + (myY * (height + 1));
 
-		int ybottom = y_offset + height + (myY * (height + 1));
-
-		Color temp = g.getColor();
+		g.getColor();
 
 
 
