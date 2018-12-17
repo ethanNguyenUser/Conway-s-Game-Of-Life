@@ -241,10 +241,6 @@ public class Cell {
 
 		int ytop = y_offset + 1 + (myY * (height + 1));
 
-		g.getColor();
-
-
-
 		g.setColor(myColor);
 
 		g.fillRect(xleft, ytop, width, height);
